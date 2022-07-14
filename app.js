@@ -110,8 +110,26 @@ app.post("/search", (req, res) => {
   });
 });
 
+
+app.post("/exact", (req, res) => {
+  namet = req.body.name;
+  namet = " "+namet.toUpperCase()+" ";
+  // console.log(namet)
+  db.collection("marks").find({name: namet}).toArray(function (err, result) {
+    // console.log(result)
+      if (err) throw err;
+      res.render("puc", {
+        data:result
+      })
+  });
+});
+
 app.get("/",(req,res)=>{
   res.render("name")
+})
+
+app.get("/namematch",(req,res)=>{
+  res.render("exact")
 })
 
 
