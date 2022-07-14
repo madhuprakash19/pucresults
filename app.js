@@ -118,10 +118,19 @@ app.get("/",(req,res)=>{
 
 app.get("/detail/:id", (req, res) => {
   const id = req.params.id;
+  const keyarr = []
+  const valuearr = []
   db.collection("marks").find({ _id: ObjectId(id) }).toArray(function (err, result) {
       if (err) throw err;
+      for (const [key, value] of Object.entries(result[0])) {
+        keyarr.push(key);
+        valuearr.push(value);
+          }
+          // console.log(result)
       res.render("detail", {
-          data: result[0]
+          data: result[0],
+          key : keyarr,
+          value : valuearr,
       })
   });
 });

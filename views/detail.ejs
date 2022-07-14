@@ -1,12 +1,53 @@
 <%- include("partials/header"); -%>
-<h1>Detail Page</h1>
-Name: <%= data.name%>
+<div class="container">
+  <div class="jumbotron">
+    <h2>Name : <%= data.name%></h2>
+    <h2>Reg Number : <%= data.regno%></h2>
+    <br>
+    <table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Subject</th>
+      <th scope="col">Marks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= key[3]%></td>
+      <td><%= value[3]%></td>
+    </tr>
+    <tr>
+      <td><%= key[4]%></td>
+      <td><%= value[4]%></td>
+    </tr>
+    <tr>
+      <td><%= key[5]%></td>
+      <td><%= value[5]%></td>
+    </tr>
+    <tr>
+      <td><%= key[6]%></td>
+      <td><%= value[6]%></td>
+    </tr>
+    <tr>
+      <td><%= key[7]%></td>
+      <td><%= value[7]%></td>
+    </tr>
+    <tr>
+      <td><%= key[8]%></td>
+      <td><%= value[8]%></td>
+    </tr>
+  </tbody>
+</table>
+<h2>Total : <%= data.total%></h2>
+<h2>Result : <%= data.result%></h2>
 <br>
-Reg NO: <%= data.regno%>
-<br>
-Marks : <%= data.total%>
-<br>
-Result : <%= data.result%>
+<a href="/"><button type="button" name="button" class="btn btn-primary">Home Page</button></a>
+  </div>
+</div>
+<div class="" style="visibility: hidden;">
+  <a href="https://www.hitwebcounter.com" target="_blank">
+  <img src="https://hitwebcounter.com/counter/counter.php?page=8014181&style=0006&nbdigits=8&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>
+</div>
 
 
     <%- include("partials/footer"); -%>

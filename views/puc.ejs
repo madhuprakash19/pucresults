@@ -1,9 +1,27 @@
 <%- include("partials/header"); -%>
-<h1>PUC HOME PAGE</h1>
-<% data.forEach(function(student){ %>
-    <br><a href="/detail/<%=student._id%> ">
-              <%=student.name%>
-                </a></h2>
-    <% }) %>
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="text text-center">Name Search Results</h1>
+    <br><br>
+    <p class="text text-muted">
+      Only the top 30(reg.no wise) Names are displayed in the page,<br>
+      If the required name not present, re-enter name with more letters <a href="/" target="_blank">Click Here</a>
+      <br>
+    </p>
+    <br><br>
+    <p>
+      Click on any name to view more details
+    </p>
+    <% data.forEach(function(student){ %>
+        <br><a href="/detail/<%=student._id%> ">
+                  <%=student.name%>
+                    </a>
+        <% }) %>
+  </div>
+</div>
 
+    <div class="" style="visibility: hidden;">
+      <a href="https://www.hitwebcounter.com" target="_blank">
+      <img src="https://hitwebcounter.com/counter/counter.php?page=8014181&style=0006&nbdigits=8&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>
+    </div>
         <%- include("partials/footer"); -%>
