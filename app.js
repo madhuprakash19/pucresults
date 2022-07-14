@@ -101,7 +101,7 @@ passport.deserializeUser(function (id, done) {
 app.post("/search", (req, res) => {
   namet = req.body.name
   // console.log(namet)
-  db.collection("marks").find({name: new RegExp(namet, 'i')}).limit(30).toArray(function (err, result) {
+  db.collection("marks").find({name: new RegExp(namet, 'i')}).limit(100).toArray(function (err, result) {
     // console.log(result)
       if (err) throw err;
       res.render("puc", {
