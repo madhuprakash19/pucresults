@@ -42,6 +42,7 @@
 </table>
 <h2>Total : <%= data.total%></h2>
 <h2>Result : <%= data.result%></h2>
+<h2>Percentage: <span id="percent"> </span></h2>
 <br>
 <a href="/"><button type="button" name="button" class="btn btn-primary">Home Page</button></a>
   </div>
@@ -50,6 +51,10 @@
   <a href="https://www.hitwebcounter.com" target="_blank">
   <img src="https://hitwebcounter.com/counter/counter.php?page=8014181&style=0006&nbdigits=8&type=page&initCount=0" title="Free Counter" Alt="web counter"   border="0" /></a>
 </div>
+<script type="text/javascript">
+  var per = Math.round(((<%= data.total%>/600)*100) * 100) / 100;
+  document.getElementById("percent").innerHTML = per+"%";
+</script>
 
 
     <%- include("partials/footer"); -%>
